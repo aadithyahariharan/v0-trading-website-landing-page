@@ -84,36 +84,41 @@ export default function CareersSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-white text-balance">Career</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white text-balance text-left">
+              Join our team and let&apos;s grow together
+            </h2>
 
             <div className="space-y-4">
               <p className="text-lg text-white leading-relaxed">
-                Are you passionate about Global Trade, Logistics, Compliance & Trade Controls? We have exciting
+                Are you passionate about Global Trade, Logistics, Compliance & Trade Controls ? We have exciting
                 opportunities waiting for you to advance your career and achieve your growth aspirations!
               </p>
 
               <p className="text-lg text-white leading-relaxed">
-                Don't hesitate – reach out to us with your interests and profile. We'd love to connect with talented
-                professionals like you!
+                Don&apos;t hesitate – reach out to us with your interests and profile. We&apos;d love to connect with
+                talented professionals like you!
               </p>
 
               <p className="text-xl text-tradserv-accent font-semibold leading-relaxed">
-                Let's connect and enhance lives, Globally.
+                Let&apos;s connect and enhance lives, Globally.
               </p>
             </div>
 
             {/* Contact CTA */}
-            <div className="bg-tradserv-dark rounded-lg p-6 border border-white mt-8 hover:border-white hover:shadow-lg transition-all">
+            <div className="bg-tradserv-dark rounded-lg p-8 border border-white mt-8 hover:border-white hover:shadow-lg transition-all text-left">
               <h3 className="text-xl font-bold text-tradserv-accent mb-4">Get in Touch</h3>
-              <p className="text-tradserv-gray mb-4">
-                Send us your resume and tell us about your career aspirations. We'd love to hear from you!
+              <p className="text-tradserv-gray mb-6">
+                Your journey with <span className="text-orange-500 font-semibold">tradserv</span> begins here. Share
+                your vision and profile with us today.
               </p>
-              <a
-                href="#contact"
-                className="inline-block bg-tradserv-accent text-tradserv-dark px-6 py-3 rounded-lg font-semibold hover:bg-white hover:border-2 hover:border-white transition-all"
-              >
-                Contact Us
-              </a>
+              <div className="flex justify-start">
+                <a
+                  href="#contact"
+                  className="inline-block bg-tradserv-accent text-tradserv-dark px-8 py-3 rounded-lg font-semibold border-2 border-transparent hover:bg-transparent hover:text-white hover:border-white transition-all duration-300"
+                >
+                  Contact Us
+                </a>
+              </div>
             </div>
           </div>
 
@@ -121,7 +126,7 @@ export default function CareersSection() {
           <div className="relative">
             <img
               src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=500&fit=crop"
-              alt="Tradserv team collaboration"
+              alt="tradserv team collaboration"
               className="w-full rounded-lg shadow-2xl"
             />
           </div>

@@ -18,7 +18,13 @@ export default function ContactSection() {
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error" | "fallback">("idle")
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
+
+  const getMailtoLink = () => {
+    const body = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.company}\n\nMessage:\n${formData.message}`
+    return `mailto:dninmaa@gmail.com?subject=Contact: ${formData.subject}&body=${encodeURIComponent(body)}`
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -31,42 +37,32 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmitStatus("idle")
+    setErrorMessage(null)
 
     try {
-      const emailContent = `
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Company: ${formData.company}
-Subject: ${formData.subject}
-Message: ${formData.message}
-      `
-
-      // Send to Webhook.site for testing, then to actual email
-      const response = await fetch("https://webhook.site/unique-id", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          to: "dninmaa@gmail.com",
-          subject: `New Contact Form Submission: ${formData.subject}`,
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          company: formData.company,
-          message: formData.message,
-        }),
-      }).catch(() => ({ ok: true })) // Ignore webhook errors
-
-      // Also send via email API
-      await fetch("/api/send-contact-email", {
+      const response = await fetch("/api/send-contact-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-      }).catch(() => null)
+      })
+
+      const contentType = response.headers.get("content-type")
+      if (!contentType || !contentType.includes("application/json")) {
+        throw new Error("Server error. Please use the direct email option.")
+      }
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        if (data.isConfigError) {
+          setSubmitStatus("fallback")
+          return
+        }
+        throw new Error(data.message || "Failed to send message")
+      }
 
       setSubmitStatus("success")
       setFormData({
@@ -80,8 +76,9 @@ Message: ${formData.message}
       setTimeout(() => setSubmitStatus("idle"), 3000)
     } catch (error) {
       console.error("Error sending email:", error)
-      setSubmitStatus("success") // Show success anyway since form was submitted
-      setTimeout(() => setSubmitStatus("idle"), 3000)
+      setSubmitStatus("error")
+      setErrorMessage(error instanceof Error ? error.message : "An unexpected error occurred")
+      setTimeout(() => setSubmitStatus("idle"), 5000)
     } finally {
       setIsSubmitting(false)
     }
@@ -101,7 +98,7 @@ Message: ${formData.message}
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Headquarters",
-      details: ["BT 4, Navins Flats, 4/8,", "Kalasathamman Koil Street,", "Ramapuram, Chennai 600089, India"],
+      details: ["NAVIN'S SUBHAMANGLA,", "Kalasathamman Koil St, Chellammal Nagar,", "Ramapuram, Chennai 600089"],
     },
   ]
 
@@ -211,20 +208,33 @@ Message: ${formData.message}
                   Subject
                 </label>
                 <select
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-tradserv-dark border border-tradserv-light-blue text-white rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-tradserv-accent"
-                >
-                  <option value="">Select a subject</option>
-                  <option value="trading">Trading Services</option>
-                  <option value="logistics">Logistics & Shipping</option>
-                  <option value="supply-chain">Supply Chain Management</option>
-                  <option value="careers">Careers</option>
-                  <option value="other">Other</option>
-                </select>
+  id="subject"
+  name="subject"
+  value={formData.subject}
+  onChange={handleChange}
+  required
+  className="w-full bg-tradserv-dark border border-tradserv-light-blue text-white rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-tradserv-accent"
+>
+  <option value="" className="text-tradserv-accent">
+    Select a subject
+  </option>
+  <option value="trading" className="text-tradserv-accent">
+    Trading Services
+  </option>
+  <option value="logistics" className="text-tradserv-accent">
+    Logistics & Shipping
+  </option>
+  <option value="supply-chain" className="text-tradserv-accent">
+    Supply Chain Management
+  </option>
+  <option value="careers" className="text-tradserv-accent">
+    Careers
+  </option>
+  <option value="other" className="text-tradserv-accent">
+    Other
+  </option>
+</select>
+
               </div>
 
               <div>
@@ -251,7 +261,20 @@ Message: ${formData.message}
 
               {submitStatus === "error" && (
                 <div className="bg-red-500/20 border border-red-500 text-red-400 px-4 py-3 rounded-md text-sm">
-                  Something went wrong. Please try again.
+                  {errorMessage || "Something went wrong. Please try again."}
+                </div>
+              )}
+
+              {submitStatus === "fallback" && (
+                <div className="bg-orange-500/20 border border-orange-500 text-orange-400 px-4 py-3 rounded-md text-sm">
+                  <p className="mb-2">The automated email service requires configuration.</p>
+                  <p className="mb-2 text-xs opacity-80">
+                    To enable automatic sending, please add your <strong>GMAIL_USER</strong> and{" "}
+                    <strong>GMAIL_PASSWORD</strong> (App Password) to the Vars section.
+                  </p>
+                  <a href={getMailtoLink()} className="underline font-bold hover:text-white transition-colors">
+                    Click here to send your message via your email app instead
+                  </a>
                 </div>
               )}
 
@@ -271,7 +294,7 @@ Message: ${formData.message}
             {/* Map Placeholder */}
             <div className="bg-tradserv-blue rounded-lg overflow-hidden h-96">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.5!2d80.2241!3d13.0027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526f5e5e5e5e5d%3A0x1234567890abcdef!2sLawyer%20Narasimhan!5e0!3m2!1sen!2sin!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.056!2d80.184816!3d13.026133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAxJzM0LjEiTiA4MMKwMTEnMDUuMyJF!5e0!3m2!1sen!2sin!4v1710000000000"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -287,15 +310,11 @@ Message: ${formData.message}
               <div className="space-y-2 text-tradserv-gray text-sm">
                 <div className="flex justify-between">
                   <span>Monday - Friday</span>
-                  <span className="text-tradserv-accent font-semibold">9:00 AM - 6:00 PM</span>
+                  <span className="text-tradserv-accent font-semibold">IST :- 09:00 - 18:00</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Saturday</span>
-                  <span className="text-tradserv-accent font-semibold">10:00 AM - 4:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sunday</span>
-                  <span className="text-tradserv-accent font-semibold">Closed</span>
+                  <span className="text-tradserv-accent font-semibold">IST :- 09:00 - 13:00</span>
                 </div>
               </div>
               <p className="text-xs text-tradserv-gray mt-4 pt-4 border-t border-tradserv-light-blue">

@@ -15,49 +15,49 @@ const slides: CarouselSlide[] = [
     id: 1,
     title: "Global Trading",
     subtitle: "Enabling the global trade seamless and enhancing lives",
-    image: "/images/expertise-1.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Global%20Trade%201.0-jBXoS17xSTDWyMyLMqfNzSfirVVjN9.png",
   },
   {
     id: 2,
     title: "Sea Logistics",
-    subtitle: "Cost Effective Transportation on Ocean, Connecting Ends",
-    image: "/images/expertise-2.jpg",
+    subtitle: "Cost Effective and Time Sensitive Transportation on Ocean, Connecting Ends",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Sea%20Logistics%202.0-XYpd66LaaM4XcYaq1wNldGHBceOFC1.jpeg",
   },
   {
     id: 3,
     title: "Air Logistics",
     subtitle: "Fast, Agile and Time Critical Logistics by Air",
-    image: "/images/expertise-3.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Air%20Logistics%202.0-IkRhBRvM3mT7gOd4nzWm7Q0UjbBLEG.png",
   },
   {
     id: 4,
     title: "Project Logistics",
     subtitle: "Oversize, Complex, Heavy Lifts – OOG/Breakbulk",
-    image: "/images/expertise-4.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Project%20Logistics-xIiOtwCIpiw9Pa9w5LPhhpyYDbh5NO.jpeg",
   },
   {
     id: 5,
     title: "Custom Clearance",
     subtitle: "Professional Cross Border Custom Clearance",
-    image: "/images/expertise-5.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Customs%20Clearance-XiEgbXwZzxyAVvNZn8rnuTzf8ODFtT.png",
   },
   {
     id: 6,
     title: "BPO – Logistics Operation & Finance",
     subtitle: "Backend Operations, Tax Dispute Mitigation, Resolution",
-    image: "/images/expertise-6.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BPO%20Consulting%20Operations%2C%20Financce%2C%20Data%20Updation%20and%20Customer%20Services-Ve5vqhYNT4FphgLY6rReKYbbQwFDPj.png",
   },
   {
     id: 7,
-    title: "Compliance, Controls Taxation",
+    title: "Compliance, Controls and Taxation",
     subtitle: "Global Trade Controls, Compliance, Supply Chain Security",
-    image: "/images/expertise-7.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Tax%2C%20Duty%2C%20Trade%20Control%20and%20Legal-akrj0yxNXE6874E8jTZ41zuWtV3tXQ.png",
   },
   {
     id: 8,
     title: "Corporate Governance",
     subtitle: "Regulatory Governance, CSR & ESG",
-    image: "/images/expertise-8.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ESG-v8qrVv65QyhlwuEhCjn3s2hdN3hkCq.png",
   },
 ]
 
@@ -161,70 +161,90 @@ export default function HeroCarousel() {
 
       <div className="bg-tradserv-dark py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Text Content */}
-          <div className="space-y-6 mb-16">
-            <div className="space-y-4">
-              <p className="text-xl md:text-2xl font-bold text-tradserv-dark-text leading-relaxed">
-                Integrated Solutions spanning global trading, logistics, compliance, and consulting.
-              </p>
+          {/* Realigned text content and Picture 9 (globe) to be parallel, with text on left and globe on right */}
+          <div className="flex flex-col md:flex-row items-center gap-12 mb-16">
+            <div className="flex-1 space-y-6">
+              <div className="space-y-4">
+                <p className="text-xl md:text-2xl font-bold text-tradserv-dark-text leading-relaxed">
+                  Integrated Solutions spanning <span className="text-orange-500 font-semibold">tradserv</span>,
+                  Logistics, Compliance and Consulting.
+                </p>
 
-              <p className="text-lg md:text-xl text-tradserv-dark-text leading-relaxed">
-                Sourcing and procurement across continents to optimizing supply chains and ensuring seamless
-                cross-border movement of goods.
-              </p>
+                <p className="text-lg md:text-xl text-tradserv-dark-text leading-relaxed">
+                  Sourcing and procurement across continents for optimizing supply chains and ensuring seamless
+                  cross-border movement of goods with <span className="text-orange-500 font-semibold">tradserv</span>.
+                </p>
 
-              <p className="text-lg md:text-xl text-tradserv-dark-text leading-relaxed">
-                Our expertise extends to navigating the labyrinth of global trade regulations, including tariffs,
-                customs, and export controls, minimizing risks and control maximization.
-              </p>
+                <p className="text-lg md:text-xl text-tradserv-dark-text leading-relaxed">
+                  Our expertise extends to navigating the labyrinth of global trade regulations, including tariffs,
+                  customs, and export controls, minimizing risks and control maximization.
+                </p>
+              </div>
+            </div>
+
+            {/* Picture 9 (globe) positioned to the right of the text, with consistent lighter blue tint */}
+            <div className="flex-shrink-0">
+              <img
+                src="/images/picture9.png"
+                alt="Global reach"
+                className="w-32 h-32 md:w-48 md:h-48 object-contain brightness-150 contrast-125 sepia-[0.2] hue-rotate-[180deg] saturate-200"
+                style={{
+                  filter: "invert(65%) sepia(85%) saturate(300%) hue-rotate(185deg) brightness(105%) contrast(101%)",
+                }}
+              />
             </div>
           </div>
 
-          {/* Service Icons Row - with Picture 9 on right and Pictures 10-15 below */}
-          <div className="flex flex-col gap-8">
-            {/* Top row with Picture 9 on the right */}
-            <div className="flex justify-between items-center">
-              <div className="flex-1"></div>
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Picture9-9XW9rpW3d4w3oqHL7AEXgmoKLzoPgN.png"
-                alt="Global reach"
-                className="w-20 h-20 object-contain"
-              />
-            </div>
-
-            {/* Bottom row with Pictures 10-15 */}
-            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Picture10-dIsizWJn3GRFOiKCehBjnOs9OrhUzi.png"
-                alt="FIATA"
-                className="w-16 h-16 object-contain"
-              />
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Picture11-k5hReVQ8KUNXj6z7r0Kcgdo3dqDGsq.png"
-                alt="Ship logistics"
-                className="w-16 h-16 object-contain"
-              />
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Picture12-tINJ9RNhCofxwGXBbVr6KJC2eRiGUA.png"
-                alt="Checkmark"
-                className="w-16 h-16 object-contain"
-              />
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Picture13-8LHFpFps1bBbYC3yvM3rLmkVUdsrVz.png"
-                alt="Truck"
-                className="w-16 h-16 object-contain"
-              />
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Picture14-oRHmcaL0rBhynEONcnTkeIzzRQUPcJ.png"
-                alt="User profile"
-                className="w-16 h-16 object-contain"
-              />
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Picture15-zja4ISS4diWjVn5C5jnlBOYMcTJL5N.png"
-                alt="Scales"
-                className="w-16 h-16 object-contain"
-              />
-            </div>
+          {/* Service Icons Row with light blue color tonality and fixed Picture 10 fitting */}
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12">
+            <img
+              src="/images/picture10.png"
+              alt="FIATA"
+              className="w-20 h-20 object-contain p-1 bg-white/10 rounded-lg"
+              style={{
+                filter: "invert(65%) sepia(85%) saturate(300%) hue-rotate(185deg) brightness(105%) contrast(101%)",
+              }}
+            />
+            <img
+              src="/images/picture11.png"
+              alt="Ship logistics"
+              className="w-16 h-16 object-contain"
+              style={{
+                filter: "invert(65%) sepia(85%) saturate(300%) hue-rotate(185deg) brightness(105%) contrast(101%)",
+              }}
+            />
+            <img
+              src="/images/picture12.png"
+              alt="Checkmark"
+              className="w-16 h-16 object-contain"
+              style={{
+                filter: "invert(65%) sepia(85%) saturate(300%) hue-rotate(185deg) brightness(105%) contrast(101%)",
+              }}
+            />
+            <img
+              src="/images/picture13.png"
+              alt="Truck"
+              className="w-16 h-16 object-contain"
+              style={{
+                filter: "invert(65%) sepia(85%) saturate(300%) hue-rotate(185deg) brightness(105%) contrast(101%)",
+              }}
+            />
+            <img
+              src="/images/picture14.png"
+              alt="User profile"
+              className="w-16 h-16 object-contain"
+              style={{
+                filter: "invert(65%) sepia(85%) saturate(300%) hue-rotate(185deg) brightness(105%) contrast(101%)",
+              }}
+            />
+            <img
+              src="/images/picture15.png"
+              alt="Scales"
+              className="w-16 h-16 object-contain"
+              style={{
+                filter: "invert(65%) sepia(85%) saturate(300%) hue-rotate(185deg) brightness(105%) contrast(101%)",
+              }}
+            />
           </div>
         </div>
       </div>

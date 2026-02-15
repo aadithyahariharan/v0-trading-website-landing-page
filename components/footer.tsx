@@ -23,11 +23,31 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold mb-4">Our Services</h4>
             <ul className="space-y-2 text-tradserv-gray text-sm">
-              <li>Global Trading</li>
-              <li>Logistics</li>
-              <li>Compliance & Trade Controls</li>
-              <li>BPO Finance, Operations, Consulting</li>
-              <li>ESG, Tax & Duties</li>
+              <li>
+                <a href="#globaltrading" className="hover:text-tradserv-accent transition-colors">
+                  Global Trading
+                </a>
+              </li>
+              <li>
+                <a href="#logistics" className="hover:text-tradserv-accent transition-colors">
+                  Logistics
+                </a>
+              </li>
+              <li>
+                <a href="#compliance" className="hover:text-tradserv-accent transition-colors">
+                  Compliance & Trade Controls
+                </a>
+              </li>
+              <li>
+                <a href="#bpo" className="hover:text-tradserv-accent transition-colors">
+                  BPO Finance, Operations, Consulting
+                </a>
+              </li>
+              <li>
+                <a href="#bpo" className="hover:text-tradserv-accent transition-colors">
+                  ESG, Tax & Duties
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -83,7 +103,9 @@ export default function Footer() {
 
         {/* Divider */}
         <div className="border-t border-tradserv-light-blue pt-8">
-          <p className="text-tradserv-gray text-sm text-center">&copy; {currentYear} Tradserv. All rights reserved.</p>
+          <p className="text-tradserv-gray text-sm text-center">
+            &copy; {currentYear} <span className="text-orange-500 font-semibold">tradserv</span>. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
