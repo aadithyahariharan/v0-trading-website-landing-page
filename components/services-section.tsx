@@ -18,10 +18,11 @@ export default function ServicesSection() {
       id: "industryexpertise",
       title: "Industry Expertise",
       description:
-        "Our team comprises seasoned professionals with deep expertise across global trading, compliance, and logistics sectors. Each member brings specialized knowledge and years of experience to deliver exceptional value.",
+        "Our team comprises seasoned professionals with deep expertise across <span class='text-orange-500 font-semibold'>tradserv</span>, compliance, and logistics sectors. Each member brings specialized knowledge and years of experience to deliver exceptional value.",
       details: [
-        "Global Trading – Founder-Member: 15 Years Merchant Trade Bulk EXIM, Master Degree in Foreign Trade Logistics",
-        "Global Trading – Founder-Member: 38 Years Expert- FIATA, LCB(CHA), 4PL, Projects, Vessel Charter",
+        "Logistics Operations Backend Outsourcing (LOBO) - Processing & Management of Documents, Operations & Customer Service. Data Analysis, Tracking and Updation. Administrative & Accounting Services",
+        "Global Trading – Founder-Member: 15 Years Merchant Trade, Break Bulk EXIM, Master Degree in Foreign Trade",
+        "Logistics – Founder-Member: 38 Years Expert- FIATA, LCB(CHA), 4PL, Projects, Vessel Charter",
         "Compliance & Trade Controls – Founder-Member: LL.B 15 Years expertise in Trade Control, Compliance, DMAIC",
         "Consulting - BPO Finance, Operations, ESG, Tax & Duties – Partner-Member: CA, Finance, BPO and Legal Practising",
       ],
@@ -127,7 +128,7 @@ export default function ServicesSection() {
               ref={(el) => {
                 if (el) cardRefs.current[service.id] = el
               }}
-              className={`bg-tradserv-blue rounded-lg overflow-hidden border border-white transition-all duration-700 transform ${
+              className={`bg-tradserv-blue rounded-lg overflow-hidden border border-orange-500 transition-all duration-700 transform ${
                 visibleCards.has(service.id) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
@@ -138,7 +139,10 @@ export default function ServicesSection() {
 
               {/* Card Content */}
               <div className="p-8">
-                <p className="text-tradserv-gray text-lg mb-6 leading-relaxed">{service.description}</p>
+                <p
+                  className="text-tradserv-gray text-lg mb-6 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: service.description }}
+                ></p>
 
                 {/* Details List */}
                 <div className="grid md:grid-cols-2 gap-4">

@@ -45,11 +45,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 h-16 flex items-center p-0">
             <Link href="#home" className="flex items-center h-full p-0">
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-hB4bOCg2Cbi0tvjo0Z9b5n8hrNr7LA.png"
-                alt="Tradserv Logo"
-                className="h-full w-auto object-cover"
-              />
+              <img src="/images/image.png" alt="tradserv logo" className="h-full w-auto object-cover" />
             </Link>
           </div>
 
