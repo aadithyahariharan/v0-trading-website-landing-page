@@ -194,3 +194,19 @@ html {
 .fade-in {
   animation: fadeIn 0.8s ease-out;
 }
+
+/* Dropdown Option Styling */
+select option {
+  background-color: #001a4d;
+  color: #0052cc;
+}
+
+select option:checked {
+  background-color: #0052cc;
+  color: #ffffff;
+}
+
+select option:hover {
+  background-color: #003d99;
+  color: #0052cc;
+}
