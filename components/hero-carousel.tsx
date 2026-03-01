@@ -166,13 +166,12 @@ export default function HeroCarousel() {
             <div className="flex-1 space-y-6">
               <div className="space-y-4">
                 <p className="text-xl md:text-2xl font-bold text-tradserv-dark-text leading-relaxed">
-                  Integrated Solutions spanning <span className="text-orange-500 font-semibold">tradserv</span>,
-                  Logistics, Compliance and Consulting.
+                  Integrated Solutions spanning Trading, Logistics, Compliance and Consulting.
                 </p>
 
                 <p className="text-lg md:text-xl text-tradserv-dark-text leading-relaxed">
                   Sourcing and procurement across continents for optimizing supply chains and ensuring seamless
-                  cross-border movement of goods with <span className="text-orange-500 font-semibold">tradserv</span>.
+                  cross-border movement of goods.
                 </p>
 
                 <p className="text-lg md:text-xl text-tradserv-dark-text leading-relaxed">
@@ -187,22 +186,22 @@ export default function HeroCarousel() {
               <img
                 src="/images/picture9.png"
                 alt="Global reach"
-                className="w-32 h-32 md:w-48 md:h-48 object-contain brightness-150 contrast-125 sepia-[0.2] hue-rotate-[180deg] saturate-200"
+                className="w-32 h-32 md:w-48 md:h-48 object-contain brightness-150 contrast-125"
                 style={{
-                  filter: "invert(65%) sepia(85%) saturate(300%) hue-rotate(185deg) brightness(105%) contrast(101%)",
+                  filter: "brightness(0) invert(1)",
                 }}
               />
             </div>
           </div>
 
-          {/* Service Icons Row with light blue color tonality and fixed Picture 10 fitting */}
+          {/* Service Icons Row with white color */}
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12">
             <img
               src="/images/picture10.png"
               alt="FIATA"
               className="w-20 h-20 object-contain p-1 bg-white/10 rounded-lg"
               style={{
-                filter: "invert(65%) sepia(85%) saturate(300%) hue-rotate(185deg) brightness(105%) contrast(101%)",
+                filter: "brightness(0) invert(1)",
               }}
             />
             <img
@@ -210,7 +209,7 @@ export default function HeroCarousel() {
               alt="Ship logistics"
               className="w-16 h-16 object-contain"
               style={{
-                filter: "invert(65%) sepia(85%) saturate(300%) hue-rotate(185deg) brightness(105%) contrast(101%)",
+                filter: "brightness(0) invert(1)",
               }}
             />
             <img
@@ -218,7 +217,7 @@ export default function HeroCarousel() {
               alt="Checkmark"
               className="w-16 h-16 object-contain"
               style={{
-                filter: "invert(65%) sepia(85%) saturate(300%) hue-rotate(185deg) brightness(105%) contrast(101%)",
+                filter: "brightness(0) invert(1)",
               }}
             />
             <img
@@ -226,7 +225,7 @@ export default function HeroCarousel() {
               alt="Truck"
               className="w-16 h-16 object-contain"
               style={{
-                filter: "invert(65%) sepia(85%) saturate(300%) hue-rotate(185deg) brightness(105%) contrast(101%)",
+                filter: "brightness(0) invert(1)",
               }}
             />
             <img
@@ -234,7 +233,7 @@ export default function HeroCarousel() {
               alt="User profile"
               className="w-16 h-16 object-contain"
               style={{
-                filter: "invert(65%) sepia(85%) saturate(300%) hue-rotate(185deg) brightness(105%) contrast(101%)",
+                filter: "brightness(0) invert(1)",
               }}
             />
             <img
@@ -242,7 +241,7 @@ export default function HeroCarousel() {
               alt="Scales"
               className="w-16 h-16 object-contain"
               style={{
-                filter: "invert(65%) sepia(85%) saturate(300%) hue-rotate(185deg) brightness(105%) contrast(101%)",
+                filter: "brightness(0) invert(1)",
               }}
             />
           </div>

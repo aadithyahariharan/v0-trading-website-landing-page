@@ -15,19 +15,6 @@ export default function ServicesSection() {
 
   const services: ServiceCard[] = [
     {
-      id: "industryexpertise",
-      title: "Industry Expertise",
-      description:
-        "Our team comprises seasoned professionals with deep expertise across <span class='text-orange-500 font-semibold'>tradserv</span>, compliance, and logistics sectors. Each member brings specialized knowledge and years of experience to deliver exceptional value.",
-      details: [
-        "Logistics Operations Backend Outsourcing (LOBO) - Processing & Management of Documents, Operations & Customer Service. Data Analysis, Tracking and Updation. Administrative & Accounting Services",
-        "Global Trading – Founder-Member: 15 Years Merchant Trade, Break Bulk EXIM, Master Degree in Foreign Trade",
-        "Logistics – Founder-Member: 38 Years Expert- FIATA, LCB(CHA), 4PL, Projects, Vessel Charter",
-        "Compliance & Trade Controls – Founder-Member: LL.B 15 Years expertise in Trade Control, Compliance, DMAIC",
-        "Consulting - BPO Finance, Operations, ESG, Tax & Duties – Partner-Member: CA, Finance, BPO and Legal Practising",
-      ],
-    },
-    {
       id: "globaltrading",
       title: "Global Trading",
       description:
@@ -89,6 +76,19 @@ export default function ServicesSection() {
         "ESG Strategy and Reporting - Sustainability reports aligned with global standards",
         "Supply Chain Sustainability - Eco-friendly materials and optimized logistics",
         "Regulatory Compliance - Navigate ESG regulations and avoid trade barriers",
+      ],
+    },
+    {
+      id: "industryexpertise",
+      title: "Industry Expertise",
+      description:
+        "Our team comprises seasoned professionals with deep expertise across trading, compliance, and logistic sectors. Each member brings specialized knowledge and years of experience to deliver exceptional value.",
+      details: [
+        "Logistics Operations Backend Outsourcing (LOBO) - Processing & Management of Documents, Operations & Customer Service. Data Analysis, Tracking and Updation. Administrative & Accounting Services",
+        "Global Trading – Founder-Member: 15 Years Merchant Trade, Break Bulk EXIM, Master Degree in Foreign Trade",
+        "Logistics – Founder-Member: 38 Years Expert- FIATA, LCB(CHA), 4PL, Projects, Vessel Charter",
+        "Compliance & Trade Controls – Founder-Member: LL.B 15 Years expertise in Trade Control, Compliance, DMAIC",
+        "Consulting - BPO Finance, Operations, ESG, Tax & Duties – Partner-Member: CA, Finance, BPO and Legal Practising",
       ],
     },
   ]
