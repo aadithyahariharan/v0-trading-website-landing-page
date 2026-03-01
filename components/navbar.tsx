@@ -33,7 +33,8 @@ export default function Navbar({ activeSection }: NavbarProps) {
     setIsOpen(false)
     const element = document.querySelector(href)
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      const offsetTop = element.getBoundingClientRect().top + window.scrollY - 80
+      window.scrollTo({ top: offsetTop, behavior: "smooth" })
     }
   }
 
