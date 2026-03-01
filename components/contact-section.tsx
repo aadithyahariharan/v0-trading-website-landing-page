@@ -98,7 +98,7 @@ export default function ContactSection() {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Headquarters",
-      details: ["NAVIN'S SUBHAMANGLA,", "Kalasathamman Koil St, Chellammal Nagar,", "Ramapuram, Chennai 600089"],
+      details: ["BT4, Block B, Third Floor, NAVIN'S SUBHAMANGLA,", "Kalasathamman Koil St, Chellammal Nagar,", "Ramapuram, Chennai 600089"],
     },
   ]
 
