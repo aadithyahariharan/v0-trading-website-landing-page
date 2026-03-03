@@ -50,7 +50,7 @@ export default function ServicesSection() {
       id: "compliance",
       title: "Compliance & Trade Controls",
       description:
-        "Key offerings on global trade controls and compliance include export controls, sanctions screening, customs management, risk assessment, Product Classification (HSN), FTA, Tariffs, COO, Technology & Consulting, Supply Chain Security (C-TPAT) AEO, Trade Finance Management & solutions to help businesses navigate complex import/export regulations, reduce risk, and ensure compliance with international laws and trade policies.",
+        "Key offerings on global trade controls and compliance include Export Controls, Sanctions Screening, Customs Management, Risk Assessment, Product Classification (HSN), FTA, Tariffs, COO, Technology & Consulting, Supply Chain Security (C-TPAT) AEO, Trade Finance Management & solutions to help businesses navigate complex import/export regulations, reduce risk, and ensure compliance with international laws and trade policies.",
       details: [
         "Export Controls",
         "Sanctions Screening",

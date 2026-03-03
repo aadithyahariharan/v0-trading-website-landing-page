@@ -66,7 +66,7 @@ export default function CareersSection() {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Global Opportunities",
-      description: "Work across our international offices and expand your horizons",
+      description: "Work across our international affiliates and expand your horizons",
     },
   ]
 

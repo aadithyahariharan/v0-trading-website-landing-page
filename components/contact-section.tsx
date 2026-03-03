@@ -93,12 +93,12 @@ export default function ContactSection() {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: ["info@tradserv.in"],
+      details: ["live@tradserv.com"],
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Headquarters",
-      details: ["BT4, Block B, Third Floor, NAVIN'S SUBHAMANGLA,", "Kalasathamman Koil St, Chellammal Nagar,", "Ramapuram, Chennai 600089"],
+      details: ["BT4, Block B, Third Floor, NAVIN'S SUBHAMANGLA,", "Kalasathamman Koil St, Chellammal Nagar,", "Ramapuram, Chennai 600089, India"],
     },
   ]
 
@@ -218,20 +218,23 @@ export default function ContactSection() {
   <option value="" className="text-tradserv-accent">
     Select a subject
   </option>
-  <option value="trading" className="text-tradserv-accent">
-    Trading Services
+  <option value="global-trading" className="text-tradserv-accent">
+    Global Trading
   </option>
   <option value="logistics" className="text-tradserv-accent">
-    Logistics & Shipping
+    Logistics
   </option>
-  <option value="supply-chain" className="text-tradserv-accent">
-    Supply Chain Management
+  <option value="compliance-trade-controls" className="text-tradserv-accent">
+    Compliance and Trade Controls
+  </option>
+  <option value="consulting-bpo" className="text-tradserv-accent">
+    Consulting - BPO
   </option>
   <option value="careers" className="text-tradserv-accent">
     Careers
   </option>
-  <option value="other" className="text-tradserv-accent">
-    Other
+  <option value="others" className="text-tradserv-accent">
+    Others
   </option>
 </select>
 
