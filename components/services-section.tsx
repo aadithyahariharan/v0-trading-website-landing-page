@@ -69,13 +69,13 @@ export default function ServicesSection() {
       description:
         "Offering a suite of specialized services to mitigate risk, competitive advantage, Streamlined Operations, Cost Reduction, Corporate Global Social Responsibility.",
       details: [
+        "Logistics Operations Backend Outsourcing (LOBO) - Processing & Management of Documents, Operations & Customer Service. Data Analysis, Tracking and Updation. Administrative & Accounting Services",
         "Litigation & Dispute Resolution on Indirect Taxes (GST, Customs Duties, VAT)",
         "Case Management, Legal Research, Petition, Appeal, Trial",
         "ADR & Advance Rulings, Arbitration and Mediation",
         "Contract Management - Entire lifecycle from drafting to execution",
         "ESG Strategy and Reporting - Sustainability reports aligned with global standards",
         "Supply Chain Sustainability - Eco-friendly materials and optimized logistics",
-        "Regulatory Compliance - Navigate ESG regulations and avoid trade barriers",
       ],
     },
     {
