@@ -24,7 +24,7 @@ export default function Footer() {
               Mobile <span className="text-white">+91 99625 82721</span>
             </p>
             <p className="text-tradserv-gray text-sm mt-2">
-              E Mail: <span className="text-white">dninmaa@gmail.com</span>
+              E Mail: <span className="text-white">live@tradserv.com</span>
             </p>
           </div>
 
