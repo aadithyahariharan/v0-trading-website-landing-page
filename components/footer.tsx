@@ -97,12 +97,12 @@ export default function Footer() {
             <h4 className="text-white font-bold mb-4">Legal</h4>
             <ul className="space-y-2 text-tradserv-gray text-sm">
               <li>
-                <a href="/Privacy-Policy.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-tradserv-accent transition-colors">
+                <a href="/Privacy Policy (1).pdf" target="_blank" rel="noopener noreferrer" className="hover:text-tradserv-accent transition-colors">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="/TERMS-OF-USE.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-tradserv-accent transition-colors">
+                <a href="/TERMS OF USE (1).pdf" target="_blank" rel="noopener noreferrer" className="hover:text-tradserv-accent transition-colors">
                   Terms of Use
                 </a>
               </li>
