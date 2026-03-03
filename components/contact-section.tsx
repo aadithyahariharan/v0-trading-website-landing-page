@@ -93,12 +93,12 @@ export default function ContactSection() {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: ["info@tradserv.in"],
+      details: ["live@tradserv.com"],
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Headquarters",
-      details: ["BT4, Block B, Third Floor, NAVIN'S SUBHAMANGLA,", "Kalasathamman Koil St, Chellammal Nagar,", "Ramapuram, Chennai 600089"],
+      details: ["BT4, Block B, Third Floor, NAVIN'S SUBHAMANGLA,", "Kalasathamman Koil St, Chellammal Nagar,", "Ramapuram, Chennai 600089, India"],
     },
   ]
 
