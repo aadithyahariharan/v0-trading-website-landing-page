@@ -1,6 +1,15 @@
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
+  const handleServiceLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    const element = document.querySelector(href)
+    if (element) {
+      const offsetTop = element.getBoundingClientRect().top + window.scrollY - 120
+      window.scrollTo({ top: offsetTop, behavior: "smooth" })
+    }
+  }
+
   return (
     <footer className="bg-tradserv-dark border-t border-tradserv-light-blue">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -24,27 +33,27 @@ export default function Footer() {
             <h4 className="text-white font-bold mb-4">Our Services</h4>
             <ul className="space-y-2 text-tradserv-gray text-sm">
               <li>
-                <a href="#globaltrading" className="hover:text-tradserv-accent transition-colors">
+                <a href="#globaltrading" onClick={(e) => handleServiceLinkClick(e, "#globaltrading")} className="hover:text-tradserv-accent transition-colors">
                   Global Trading
                 </a>
               </li>
               <li>
-                <a href="#logistics" className="hover:text-tradserv-accent transition-colors">
+                <a href="#logistics" onClick={(e) => handleServiceLinkClick(e, "#logistics")} className="hover:text-tradserv-accent transition-colors">
                   Logistics
                 </a>
               </li>
               <li>
-                <a href="#compliance" className="hover:text-tradserv-accent transition-colors">
+                <a href="#compliance" onClick={(e) => handleServiceLinkClick(e, "#compliance")} className="hover:text-tradserv-accent transition-colors">
                   Compliance & Trade Controls
                 </a>
               </li>
               <li>
-                <a href="#bpo" className="hover:text-tradserv-accent transition-colors">
+                <a href="#bpo" onClick={(e) => handleServiceLinkClick(e, "#bpo")} className="hover:text-tradserv-accent transition-colors">
                   BPO Finance, Operations, Consulting
                 </a>
               </li>
               <li>
-                <a href="#bpo" className="hover:text-tradserv-accent transition-colors">
+                <a href="#bpo" onClick={(e) => handleServiceLinkClick(e, "#bpo")} className="hover:text-tradserv-accent transition-colors">
                   ESG, Tax & Duties
                 </a>
               </li>

@@ -93,7 +93,7 @@ export default function ContactSection() {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: ["dninmaa@gmail.com"],
+      details: ["info@tradserv.in"],
     },
     {
       icon: <MapPin className="w-6 h-6" />,
