@@ -199,7 +199,7 @@ export default function HeroCarousel() {
             <img
               src="/fiata-logo.png"
               alt="FIATA"
-              className="w-20 h-20 object-contain"
+              className="w-28 h-28 object-contain"
             />
             <img
               src="/images/picture11.png"
