@@ -44,9 +44,9 @@ export default function Navbar({ activeSection }: NavbarProps) {
     <nav className={`fixed top-0 w-full z-50 shadow-lg transition-colors duration-300 ${navBgColor}`}>
       <div className={`max-w-full mx-auto px-0 sm:px-0 lg:px-0 ${navBgColor}`}>
         <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0 h-16 flex items-center p-0">
-            <Link href="#home" className="flex items-center h-full p-0">
-              <img src="/images/image.png" alt="tradserv logo" className="h-full w-auto object-cover" />
+          <div className="flex-shrink-0 h-16 flex items-center pl-0 pr-6">
+            <Link href="#home" className="flex items-center h-full">
+              <img src="/tradserv-logo.png" alt="tradserv logo" className="h-16 w-auto object-contain" />
             </Link>
           </div>
 
