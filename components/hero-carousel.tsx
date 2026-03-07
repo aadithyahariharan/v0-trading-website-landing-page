@@ -197,9 +197,9 @@ export default function HeroCarousel() {
           {/* Service Icons Row with white color */}
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12">
             <img
-              src="/images/image.png"
+              src="/fiata-logo.png"
               alt="FIATA"
-              className="w-20 h-20 object-contain p-1 bg-white/10 rounded-lg"
+              className="w-20 h-20 object-contain"
             />
             <img
               src="/images/picture11.png"
