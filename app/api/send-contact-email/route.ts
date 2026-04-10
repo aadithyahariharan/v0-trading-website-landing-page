@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
     }
 
     await resend.emails.send({
-      from: "Tradserv <onboarding@resend.dev>",
+      from: "Tradserv <noreply@tradserv.in>",
       to: ["live@tradserv.in"],
       replyTo: email,
       subject: `New Contact Form Submission: ${subject}`,
