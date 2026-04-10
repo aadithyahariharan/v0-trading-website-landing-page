@@ -320,9 +320,6 @@ export default function ContactSection() {
                   <span className="text-tradserv-accent font-semibold">IST :- 09:00 - 13:00</span>
                 </div>
               </div>
-              <p className="text-xs text-tradserv-gray mt-4 pt-4 border-t border-tradserv-light-blue">
-                We respond to all inquiries within 24 business hours
-              </p>
             </div>
           </div>
         </div>
