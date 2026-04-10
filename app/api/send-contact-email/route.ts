@@ -1,30 +1,20 @@
 import { NextRequest, NextResponse } from "next/server"
-import nodemailer from "nodemailer"
+import { Resend } from "resend"
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(req: NextRequest) {
   try {
     const { name, email, phone, company, subject, message } =
       await req.json()
 
-    if (!process.env.ZOHO_EMAIL || !process.env.ZOHO_PASSWORD) {
-      throw new Error("Missing Zoho email credentials")
+    if (!process.env.RESEND_API_KEY) {
+      throw new Error("Missing RESEND_API_KEY")
     }
 
-    // Configure Zoho Mail transporter
-    const transporter = nodemailer.createTransport({
-      host: "smtppro.zoho.in",
-      port: 465,
-      secure: true, // SSL
-      auth: {
-        user: process.env.ZOHO_EMAIL,
-        pass: process.env.ZOHO_PASSWORD,
-      },
-    })
-
-    // Send email
-    await transporter.sendMail({
-      from: process.env.ZOHO_EMAIL,
-      to: "live@tradserv.in",
+    await resend.emails.send({
+      from: "Tradserv <onboarding@resend.dev>",
+      to: ["live@tradserv.in"],
       replyTo: email,
       subject: `New Contact Form Submission: ${subject}`,
       html: `
@@ -39,7 +29,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true })
   } catch (err) {
-    console.error("Email sending error:", err)
+    console.error("Resend error:", err)
     return NextResponse.json(
       { success: false, message: "Failed to send email" },
       { status: 500 }
