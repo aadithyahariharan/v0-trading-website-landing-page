@@ -23,7 +23,7 @@ export default function ContactSection() {
 
   const getMailtoLink = () => {
     const body = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.company}\n\nMessage:\n${formData.message}`
-    return `mailto:live@tradserv.com?subject=Contact: ${formData.subject}&body=${encodeURIComponent(body)}`
+    return `mailto:live@tradserv.in?subject=Contact: ${formData.subject}&body=${encodeURIComponent(body)}`
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -93,7 +93,7 @@ export default function ContactSection() {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: ["live@tradserv.com"],
+      details: ["live@tradserv.in"],
     },
     {
       icon: <MapPin className="w-6 h-6" />,
